@@ -28,16 +28,34 @@
           templateUrl: 'home.html'
         })
         .when('/about', {
-          templateUrl: 'about.html'
+          templateUrl: 'about.html',
+          controller: 'about'
         })
         .when('/contact', {
-          templateUrl: 'contact.html'
+          templateUrl: 'contact.html',
+          controller: 'contact',
+          controllerAs: 'c'
+        })
+        .when('/param/:any', {
+          templateUrl: 'param.html',
+          controller: 'param'
         })
         .otherwise({
           template: '<h1>404</h1>'
         });
     });
 
+    app.controller('about', function ($scope) {
+      $scope.msg = "OK Baby";
+    });
+
+    app.controller('contact', function () {
+      this.msg = "OKLa";
+    });
+
+    app.controller('param', function ($scope, $routeParams) {
+      alert($routeParams.any);
+    });
   </script>
 </body>
 
