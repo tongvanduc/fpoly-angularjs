@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="users">
+
+    <div ng-controller="user">
+        <input type="text" ng-change="ahihi()" ng-model="user.owner">
+
+        <button type="button" ng-click="alertOwner()">Alert ra Tên của Owner</button>
+
+        <ul>
+            <li>Chủ sở hữu: <span ng-bind="user.owner"></span></li>
+            <li>Email: {{ user.email }}</li>
+            <li>Điện thoại: {{ user.phone }}</li>
+            <li>Chủ đề: {{ user.topic }}</li>
+            <li>Website: {{ user.website }}</li>
+        </ul>
+
+        <footer>
+            <p>{{ footer.copyright }}</p>
+            <p>{{ footer.year }}</p>
+        </footer>
+    </div>
+    
+    <script>
+        let app = angular.module('users', []);
+
+        app.controller('user', function($scope) {
+            $scope.user = {
+                owner: "Nguyễn Văn A",
+                email: 'nguyenvana@gmail.com',
+                phone: '092 888 7989',
+                topic: 'Thời trang',
+                website: 'addidas.com'
+            }
+
+            $scope.footer = {
+                copyright: "Bản quyền thuộc về DucTV44",
+                year: '2023'
+            }
+
+            $scope.alertOwner = function () {
+                alert($scope.user.owner);
+            }
+
+            $scope.ahihi = function () {
+                alert('Input đã bị Change');
+            }
+        });
+    </script>
+</body>
+</html>

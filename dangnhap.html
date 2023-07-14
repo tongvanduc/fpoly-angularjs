@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="dangnhap">
+
+    <div ng-controller="xulydangnhap">
+        <form name="form">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" ng-model="email"><br>
+            
+            <br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password" ng-model="password"><br><br>
+
+            <button type="button" ng-click="dangnhap()">Đăng Nhập</button>
+        </form>
+        <ul>
+            <li>Email: {{ email }}</li>
+            <li>Password: {{ password }}</li>
+        </ul>
+    </div>
+
+    <script>
+        let app = angular.module('dangnhap', []);
+
+        app.controller('xulydangnhap', function ($scope) {
+            $scope.email = null;
+            $scope.password = null;
+
+            $scope.dangnhap = function () {
+                alert('Đăng nhập thành công!');
+            }
+        });
+    </script>
+</body>
+
+</html>
