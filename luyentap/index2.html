@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index 2</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <div ng-controller="users">
+        <ul>
+            <li>Name: {{ user.name }}</li>
+            <li>Email: <span ng-bind="user.email"></span></li>
+        </ul>
+
+        <input type="text" ng-model="user.name">
+
+        <button ng-dblclick="alertHello()" type="button">Alert Hello</button>
+    </div>
+
+    <script>
+        let app = angular.module('myApp', ['ngRoute']);
+
+        app.controller('users', function ($scope) {
+            $scope.user = {
+                name: "Ductv44",
+                email: "ahihi@gmail.com"
+            }
+
+            $scope.alertHello = function () {
+                alert('Hello');
+            }
+        })
+    </script>
+</body>
+
+</html>

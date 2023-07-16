@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <nav>
+        <a href="#/!">Home</a>
+        <a href="#!about">About</a>
+        <a href="#!html">HTML</a>
+    </nav>
+
+    <ng-view></ng-view>
+
+    <script>
+        let app = angular.module('myApp', ['ngRoute']);
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "pages/home.html"
+                })
+                .when("/about", {
+                    templateUrl: "pages/about.html",
+                    controller: 'aboutController'
+                })
+                .when("/html", {
+                    template: "<h1>Test template</h1>"
+                })
+                .when("/param/:param1/:param2?", {
+                    templateUrl: "pages/param.html",
+                    controller: 'paramController'
+                })
+                .otherwise({
+                    redirectTo: "/"
+                });
+        });
+
+        app.controller('aboutController', function ($scope) {
+            $scope.msg = "OK";
+        });
+
+        app.controller('paramController', function ($scope, $routeParams) {
+            if($routeParams.param1 == 'join') {
+                $scope.abc = '12345';
+            } else if ($routeParams.param1 == 'student') {
+                $scope.abc = '7890';
+            } else {
+                $scope.abc = 'qwertyui';
+            }
+
+            $scope.xyz = $routeParams.param2;
+        });
+    </script>
+</body>
+
+</html>
