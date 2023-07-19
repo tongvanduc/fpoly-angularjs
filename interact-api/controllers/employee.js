@@ -1,4 +1,4 @@
-app.controller('employeesController', ['$scope', 'employeeFactory', function ($scope, employeeFactory) {
+app.controller('employeeController', ['$scope', 'employeeFactory', function ($scope, employeeFactory) {
 
     $scope.status = null;
     $scope.employees = null;

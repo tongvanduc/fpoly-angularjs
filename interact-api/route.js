@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
         })
         .when('/employees', {
           templateUrl: 'employee.html',
-          controller: 'employeesController'
+          controller: 'employeeController'
         })
         .otherwise({
           redirectTo: '/'
