@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+
+    <div ng-controller="red">
+        <ul>
+            <li>Red msg: {{ msgR }}</li>
+            <li>Blue msg: {{ msgB }}</li>
+        </ul>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div ng-controller="blue">
+        <ul>
+            <li>Red msg: {{ msgR }}</li>
+            <li>Blue msg: {{ msgB }}</li>
+        </ul>
+    </div>
+
+    <script>
+        let app = angular.module('myApp', []);
+
+        app.controller('red', function ($scope) {
+            $scope.msgR = "This is red color;"
+        });
+
+        app.controller('blue', function ($scope) {
+            $scope.msgB = "This is blue color;"
+        });
+    </script>
+</body>
+
+</html>
