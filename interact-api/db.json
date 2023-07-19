@@ -1,32 +1,3 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "name": "Pankaj",
-      "salary": "10000"
-    },
-    {
-      "name": "David",
-      "salary": "5000",
-      "id": 2
-    },
-    {
-      "id": 10,
-      "name": "JoJo",
-      "salary": "20000"
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 23,
-      "name": "rfg g",
-      "salary": 23335
-    },
-    {
-      "id": 123,
-      "name": "23 erfv gbb",
-      "salary": 234
-    }
-  ]
+  "employees": []
 }

@@ -18,9 +18,9 @@
         Salary:<br>
         <input type="number" ng-model="employee.salary">
         <br><br>
-        <button type="button" ng-click="addEmployee()">Add</button> <button type="button">Update</button>
+        <button type="button" ng-click="addEmployee()">Add</button> <button type="button" ng-click="updateEmployee(employee.id)">Update</button>
     </form>
-    <p>Status: {{ $scope.status }}</p>
+    <p>Status: {{ status }}</p>
 
     <h1>Danh sách Employee</h1>
     <table cellpadding="0" cellspacing="0">
@@ -28,12 +28,17 @@
             <th>ID</th>
             <th>Name</th>
             <th>Salary</th>
+            <th>Action</th>
         </tr>
         <tbody ng-repeat="employee in employees">
             <tr>
-                <td>{{employee.id}}</td>
-                <td>{{employee.name}}</td>
-                <td>{{employee.salary}}</td>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.salary }}</td>
+                <td>
+                    <button type="button" ng-click="getEmployee(employee.id)">Edit</button>
+                    <button type="button" ng-click="deleteEmployee(employee.id)">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -11,12 +11,12 @@ app.factory('employeeFactory', ['$http', function ($http) {
         return $http.get(urlBase + '/' + id);
     };
 
-    employeeFactory.addEmployee = function (cust) {
-        return $http.post(urlBase, cust);
+    employeeFactory.addEmployee = function (employee) {
+        return $http.post(urlBase, employee);
     };
 
-    employeeFactory.updateEmployee = function (cust) {
-        return $http.put(urlBase + '/' + cust.ID, cust)
+    employeeFactory.updateEmployee = function (employee) {
+        return $http.put(urlBase + '/' + employee.id, employee)
     };
 
     employeeFactory.deleteEmployee = function (id) {
