@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <h1>Form</h1>
+    <form ng-submit="mySubmit()" id="myForm">
+        ID:<br>
+        <input type="number" ng-model="employee.id"><br>
+        Name:<br>
+        <input type="text" ng-model="employee.name"><br>
+        Salary:<br>
+        <input type="number" ng-model="employee.salary">
+        <br><br>
+        <button type="button" ng-click="addEmployee()">Add</button> <button type="button">Update</button>
+    </form>
+    <p>Status: {{ $scope.status }}</p>
+
+    <h1>Danh sách Employee</h1>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tbody ng-repeat="employee in employees">
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</body>
+
+</html>

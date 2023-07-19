@@ -12,32 +12,43 @@
 </head>
 
 <body ng-app="myApp">
+    <h1>RC: {{ classR }}</h1>
+    <div ng-controller="color">
+        <h3>{{ msgC }} - RC: {{ classR }}</h3>
 
-    <div ng-controller="red">
-        <ul>
-            <li>Red msg: {{ msgR }}</li>
-            <li>Blue msg: {{ msgB }}</li>
-        </ul>
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div ng-controller="blue">
-        <ul>
-            <li>Red msg: {{ msgR }}</li>
-            <li>Blue msg: {{ msgB }}</li>
-        </ul>
+        <div ng-controller="red">
+            <ul>
+                <li>RC: {{ classR }}</li>
+                <li>Red msg: {{ msgR }} - {{ $parent.redCode }}</li>
+                <li>Blue msg: {{ msgB }}</li>
+            </ul>
+        </div>
+        <br>
+        <hr><br>
+        <div ng-controller="blue">
+            <ul>
+                <li>Red msg: {{ msgR }}</li>
+                <li>Blue msg: {{ msgB }} - {{ $parent.blueCode }}</li>
+            </ul>
+        </div>
     </div>
 
     <script>
         let app = angular.module('myApp', []);
 
-        app.controller('red', function ($scope) {
-            $scope.msgR = "This is red color;"
+        app.controller('color', function ($scope) {
+            $scope.msgC = "This is color"
+            $scope.redCode = "R";
+            $scope.blueCode = "B";
+        });
+
+        app.controller('red', function ($scope, $rootScope) {
+            $rootScope.classR = 'OK Root Scope';
+            $scope.msgR = "This is red color"
         });
 
         app.controller('blue', function ($scope) {
-            $scope.msgB = "This is blue color;"
+            $scope.msgB = "This is blue color"
         });
     </script>
 </body>
