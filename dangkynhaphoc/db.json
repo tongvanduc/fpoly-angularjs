@@ -1,20 +1,20 @@
 {
-    "students": [
-        {
-            "id": 1,
-            "msv": "PH35189",
-            "name": "Hoang An",
-            "age": 25,
-            "email": "ahihi@fpt.edu.com",
-            "phone": "092 888 8888"
-        },
-        {
-            "id": 2,
-            "msv": "PH35189",
-            "name": "Hoang An",
-            "age": 25,
-            "email": "ahihi@fpt.edu.com",
-            "phone": "092 888 8888"
-        }
-    ]
+  "students": [
+    {
+      "id": 2,
+      "msv": "PH3518AAAAAAA",
+      "name": "Hoang An AAAA",
+      "age": 25,
+      "email": "ahihi@fpt.edu.com",
+      "phone": "092 888 8888"
+    },
+    {
+      "id": 1,
+      "msv": "1",
+      "name": "1",
+      "age": 1,
+      "email": "111@gmail.com",
+      "phone": "1234"
+    }
+  ]
 }

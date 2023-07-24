@@ -1,3 +1,29 @@
+<div style="float: left; width: 50%; padding: 0 50px;">
+    <h1>Form:</h1>
+    <form id="form">
+        <label for="id">ID</label> <input type="number" ng-model="student.id" id="id"> <br><br>
+        <label for="msv">MSV</label> <input type="text" ng-model="student.msv" id="msv"> <br><br>
+        <label for="name">Name</label> <input type="text" ng-model="student.name" id="name"> <br><br>
+        <label for="age">Age</label> <input type="number" ng-model="student.age" id="age"> <br><br>
+        <label for="email">Email</label> <input type="email" ng-model="student.email" id="email"> <br><br>
+        <label for="phone">Phone</label> <input type="tel" ng-model="student.phone" id="phone"> <br><br>
+        <button type="button" ng-click="themSinhVien()">Thêm sinh viên</button>
+        <button type="button" ng-click="suaSinhVien(student.id)">Sửa sinh viên</button>
+    </form>
+</div>
+
+<div style="float: right; width: 50%;">
+    <h1>Thông tin chi tiết:</h1>
+    <ul>
+        <li>id: {{ student.id }}</li>
+        <li>msv: {{ student.msv }}</li>
+        <li>name: {{ student.name }}</li>
+        <li>age: {{ student.age }}</li>
+        <li>email: {{ student.email }}</li>
+        <li>phone: {{ student.phone }}</li>
+    </ul>
+</div>
+
 <h1>Danh sách Employee</h1>
 <table class="table" cellpadding="0" cellspacing="0">
     <tr>
@@ -7,6 +33,7 @@
         <th>age</th>
         <th>email</th>
         <th>phone</th>
+        <th>action</th>
     </tr>
     <tbody ng-repeat="student in dsdangky">
         <tr>
@@ -16,6 +43,10 @@
             <td>{{ student.age }}</td>
             <td>{{ student.email }}</td>
             <td>{{ student.phone }}</td>
+            <td>
+                <button type="button" ng-click="layRaSinhVienTheoID(student.id)">Xem</button>
+                <button type="button" ng-click="xoaSinhVienTheoID(student.id)">Xóa</button>
+            </td>
         </tr>
     </tbody>
 </table>
