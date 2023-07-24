@@ -7,6 +7,12 @@
         <label for="age">Age</label> <input type="number" ng-model="student.age" id="age"> <br><br>
         <label for="email">Email</label> <input type="email" ng-model="student.email" id="email"> <br><br>
         <label for="phone">Phone</label> <input type="tel" ng-model="student.phone" id="phone"> <br><br>
+        
+        <span>Gender</span> 
+        <input type="radio" name="gender" ng-model="student.gender" value="1" id="nam"> <label for="nam">Nam</label>
+        <input type="radio" name="gender" ng-model="student.gender" value="0" id="nu"> <label for="nu">Nữ</label>
+        <br><br>
+
         <button type="button" ng-click="themSinhVien()">Thêm sinh viên</button>
         <button type="button" ng-click="suaSinhVien(student.id)">Sửa sinh viên</button>
         <button type="reset">Clear</button>
@@ -22,6 +28,7 @@
         <li>age: {{ student.age }}</li>
         <li>email: {{ student.email }}</li>
         <li>phone: {{ student.phone }}</li>
+        <li>gender: {{ student.gender }}</li>
     </ul>
 </div>
 
@@ -44,6 +51,7 @@
             <td>{{ student.age }}</td>
             <td>{{ student.email }}</td>
             <td>{{ student.phone }}</td>
+            <td>{{ student.gender ? 'Nam' : 'Nữ' }}</td>
             <td>
                 <button type="button" ng-click="layRaSinhVienTheoID(student.id)">Xem</button>
                 <button type="button" ng-click="xoaSinhVienTheoID(student.id)">Xóa</button>
