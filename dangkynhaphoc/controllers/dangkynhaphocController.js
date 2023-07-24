@@ -9,6 +9,8 @@ app.controller('dangkynhaphocController', ['$scope', '$http', function ($scope, 
                 $scope.status = error.statusText;
             });
     }
+    
+    layRaDanhSach();
 
     $scope.layRaSinhVienTheoID = function (id) {
         $http.get(urlBase + '/' + id)
@@ -50,7 +52,5 @@ app.controller('dangkynhaphocController', ['$scope', '$http', function ($scope, 
                 });
         }
     }
-
-    layRaDanhSach();
 
 }]);
