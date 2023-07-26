@@ -1,20 +1,67 @@
 <div style="float: left; width: 50%; padding: 0 50px;">
     <h1>Form:</h1>
-    <form id="form">
-        <label for="id">ID</label> <input type="number" ng-model="student.id" id="id"> <br><br>
-        <label for="msv">MSV</label> <input type="text" ng-model="student.msv" id="msv"> <br><br>
-        <label for="name">Name</label> <input type="text" ng-model="student.name" id="name"> <br><br>
-        <label for="age">Age</label> <input type="number" ng-model="student.age" id="age"> <br><br>
-        <label for="email">Email</label> <input type="email" ng-model="student.email" id="email"> <br><br>
-        <label for="phone">Phone</label> <input type="tel" ng-model="student.phone" id="phone"> <br><br>
+    <form id="form" name="myForm">
+        <label for="id">ID</label>
+        <input type="number" ng-model="student.id" id="id" name="myId" 
+        ng-minlength="2" ng-maxlength="5" required> <br>
         
-        <span>Gender</span> 
-        <input type="radio" name="gender" ng-model="student.gender" value="1" id="nam"> <label for="nam">Nam</label>
+        <div ng-messages="myForm.myId.$touched && myForm.myId.$error" role="alert"
+        style="color: red">
+            <div ng-message="required">Mời nhập id</div>
+            <div ng-message="maxlength">Max kí tự 5</div>
+            <div ng-message="minlength">Min kí tự 2</div>
+        </div>
+        
+        <br>
+
+        <label for="msv">MSV</label>
+        <input type="text" ng-model="student.msv" id="msv" name="myMsv" ng-maxlength="5" required> <br>
+        <div ng-messages="myForm.myMsv.$touched && myForm.myMsv.$error" style="color: red" role="alert">
+            <div ng-message="required">Mời nhập MSV</div>
+            <div ng-message="maxlength">Max kí tự 5</div>
+        </div>
+        <br>
+        <label for="name">Name</label>
+        <input type="text" ng-model="student.name" id="name" name="myName" ng-minlength="2" ng-maxlength="100" required>
+        <br>
+        <div ng-messages="myForm.myName.$touched && myForm.myName.$error" style="color: red" role="alert">
+            <div ng-message="required">Mời nhập name</div>
+            <div ng-message="maxlength">Max kí tự 100</div>
+            <div ng-message="minlength">Min kí tự 2</div>
+        </div>
+        <br>
+        <label for="age">Age</label>
+        <input type="number" ng-model="student.age" id="age" name="myAge" ng-maxlength="3" required> <br>
+        <div ng-messages="myForm.myAge.$touched && myForm.myAge.$error" style="color: red" role="alert">
+            <div ng-message="required">Mời nhập tuoi</div>
+            <div ng-message="maxlength">Max kí tự 3</div>
+        </div><br>
+        <label for="email">Email</label> <input type="email" ng-model="student.email" id="email" name="myEmail"
+            ng-minlength="2" ng-maxlength="100" ng-pattern="/^[^@]{2,64}@[^.]{2,253}\.[0-9a-z-.]{2,63}$/" required> <br>
+        <div ng-messages="myForm.myEmail.$touched && myForm.myEmail.$error" style="color: red" role="alert">
+            <div ng-message="required">Mời nhập email</div>
+            <div ng-message="maxlength">Max kí tự 100</div>
+            <div ng-message="minlength">Min kí tự 2</div>
+            <div ng-message="pattern">Format email VD: .....@gmail.com</div>
+        </div>
+        <br>
+        <label for="phone">Phone</label>
+        <input type="tel" ng-model="student.phone" id="phone" name="myPhone" ng-pattern="/^[0-9]{10}$/" required>
+        <br>
+        <div ng-messages="myForm.myPhone.$touched && myForm.myPhone.$error" style="color: red" role="alert">
+            <div ng-message="required">Mời nhập SDT</div>
+            <div ng-message="pattern">SDT la so 10 ky tu</div>
+        </div>
+        <br>
+
+        <span>Gender</span>
+        <input type="radio" name="gender" ng-model="student.gender" value="1" id="nam" ng-checked="true"><label
+            for="nam">Nam</label>
         <input type="radio" name="gender" ng-model="student.gender" value="0" id="nu"> <label for="nu">Nữ</label>
         <br><br>
 
-        <button type="button" ng-click="themSinhVien()">Thêm sinh viên</button>
-        <button type="button" ng-click="suaSinhVien(student.id)">Sửa sinh viên</button>
+        <button type="button" ng-disabled="myForm.$invalid" ng-click="themSinhVien()">Thêm sinh viên</button>
+        <button type="button" ng-disabled="myForm.$invalid" ng-click="suaSinhVien(student.id)">Sửa sinh viên</button>
         <button type="reset">Clear</button>
     </form>
 </div>

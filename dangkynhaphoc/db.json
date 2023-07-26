@@ -4,7 +4,6 @@
       "id": 2,
       "msv": "PH3518AAAAAAA",
       "name": "Hoang An AAAA",
-      "age": 25,
       "email": "ahihi@fpt.edu.com",
       "phone": "092 888 8888"
     },
@@ -15,23 +14,6 @@
       "age": 1,
       "email": "111@gmail.com",
       "phone": "1234"
-    },
-    {
-      "id": 111111,
-      "msv": "22222",
-      "name": "2222",
-      "age": 3333,
-      "email": "3333@gmail.com",
-      "phone": "3ergfbn",
-      "gender": "1"
-    },
-    {
-      "id": 21,
-      "msv": "213ertyj",
-      "name": "ưqsdfvb",
-      "email": "2wedfvb@gmail.com",
-      "phone": "ư234567u",
-      "gender": "0"
     }
   ]
 }
