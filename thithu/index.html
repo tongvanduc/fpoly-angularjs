@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.3/angular-messages.min.js"></script>
+
+    <style>
+        table, tr, td {
+            border: 1px solid;
+        }
+
+        tr, td {
+            padding: 10px;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <nav>
+        <a href="#!">Home</a>
+        <a href="#!dang-ky">Đăng ký</a>
+    </nav>
+
+    <ng-view></ng-view>
+
+    <footer>
+        <center>
+            <h1>WD18104 - Front-End Frameworks</h1>
+        </center>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="controller/HomeController.js"></script>
+    <script src="controller/RegisterController.js"></script>
+</body>
+
+</html>

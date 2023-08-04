@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "email": "ahihi@gmail.com",
+      "password": "3467890-",
+      "address1": "qứadfbm",
+      "address2": "sdfghj,",
+      "city": "sdfghj,.",
+      "zip": "2345r6yuhjb",
+      "state": "My Dinh",
+      "check": true,
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<h1>Dang ky</h1>
+<div style="width: 30%;text-align: center; float: left;">
+    <h2>Form</h2>
+    <form name="register">
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email" ng-model="user.email" ng-required="true"><br>
+        <div ng-messages="register.email.$touched && register.email.$error">
+            <div class="error" ng-message="required">Trường là bắt buộc</div>
+            <div class="error" ng-message="email">Trường chưa đúng định dạng Email</div>
+        </div>
+
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password" ng-model="user.password"><br>
+    
+        <label for="address1">Address 1</label><br>
+        <input type="text" name="address1" id="address1" ng-model="user.address1"><br>
+    
+        <label for="address2">Address 2</label><br>
+        <input type="text" name="address2" id="address2" ng-model="user.address2"><br>
+    
+        <label for="city">City</label><br>
+        <input type="text" name="city" id="city" ng-model="user.city"><br>
+    
+        <label for="zip">Zip</label><br>
+        <input type="text" name="zip" id="zip" ng-model="user.zip"><br>
+    
+        <label for="state">State</label><br>
+        <select name="state" 
+                id="state" 
+                ng-model="user.state"
+                ng-options="x for x in states"></select><br>
+    
+        <input type="checkbox" name="check" id="check" ng-model="user.check"> <label for="check">Check me out</label><br>     
+    
+        <button type="button" ng-disabled="register.$invalid" ng-click="them()">Thêm</button>
+        <button type="button" ng-disabled="register.$invalid" ng-click="sua(user.id)">Sửa</button>
+        <button type="reset">Clear</button>
+    </form>
+</div>
+
+<div style="width: 70%; float: right;">
+    <h2>Danh sach</h2>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Address 1</td>
+            <td>Address 2</td>
+            <td>City</td>
+            <td>Zip</td>
+            <td>State</td>
+            <td>Check me out</td>
+            <td>Action</td>
+        </tr>
+
+        <tr ng-repeat="user in users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.address1 }}</td>
+            <td>{{ user.address2 }}</td>
+            <td>{{ user.city }}</td>
+            <td>{{ user.zip }}</td>
+            <td>{{ user.state }}</td>
+            <td>{{ user.check }}</td>
+            <td>
+                <button type="button" ng-click="xem(user.id)">Xem</button>
+                <button type="button" ng-click="xoa(user.id)">Xoa</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div style="clear: both;"></div>
